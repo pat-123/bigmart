@@ -32,10 +32,10 @@ Exploratory data analysis
 - Few outliers in Item_Outlet_Sales , Item_Weight,Item_Visibility removed
 - Zero values in Item_Visibilty : replaced with median
 
-- Correlation
+### Correlation
 	- Cleaned dataframe has higher correlation of Item_MRP,Item_Weight to Item_Outlet_Sales, except Item_Visibiity
 	- Original dataframe has lower as compared, except for Item_Visibilty which has higher corrleation wrt cleaned dataframe
-- Categorical columns analysis
+### Categorical columns analysis
 	- Outlet_Type
 		- Cleaned dataframe has only 2 Outlet_Types, out of which Super Market Type 1 makes more significant contribution towards outlet sales than Super Market Type 2
 		- Original dataframe states Super Market Type 3 contributing more, followed by Super Market Type 1 
@@ -65,7 +65,7 @@ Exploratory data analysis
 		- Inside drinks, Hard drinks contribute more than soft_srinks
 - ** means new features from old ones(feature engineering)  
 
-   - summary:
+   #### summary:
       - SuperMarket_Type3 (most sales contributor) is medium sized, followed by Type 1 which belongs to all 3 sizes
       - Further suggests that sales contribution has nothing to do with Outlet_dIdentifier
       - Outlet_Identifier is for sure redundant and will result in multi-collinearity issue and hence not to be included
