@@ -107,6 +107,7 @@ RESULT
 	- snack foods and Fruits/vegetables are the most sold food commodity, but the contribution is not as high as seafood/frozen foods/breakfast items/canned 
 	- Drinks have overall less cost, so least contributor
 		- Hard drinks contribute more
+	- outlet location type or item_weight or Visibilty or outlet size have no or very less effect on sale contibution
 	- results would be better if we can make the sales distribution follow a straighter line, may be remove the records contributing to higher curve or may be use more advanced model like xgboost(To be done)
 	
 
