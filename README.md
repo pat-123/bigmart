@@ -1,4 +1,4 @@
-This project is about sales prediction of items in a mart.
+This project is about predicting contribution to outlet sales, against each item that is sold, given mrp,store location, store size, item type and other features.
 
 # Few points worth mentioning regarding directory structure:
 - csv is placed under data/raw/
@@ -101,4 +101,12 @@ RESULT
 - I have used DecisionTreeRegressor , LinearRegression and RandomForestRegressor
 - original dataframeLinearRegression : performs better with average model score of 0.5459run over 5 KFolds, rmse : 0.157, accuracy : -66
 - Cleaned dataframe :LinearRegression performs better with average model score of 0.46 run over 5 KFolds with original dataframe, rmse : 0.17, accuracy : 33
+- The score is low as we have a curvier line representing the Item_Outlet_Sales
+	- major contributer to more outlet sales is the mrp of the product which is sold
+	- certain costly items like seafood, frozen foods , canned foods, breakfast food contribute more towards sale, despite the sales quantity being low
+	- snack foods and Fruits/vegetables are the most sold food commodity, but the contribution is not as high as seafood/frozen foods/breakfast items/canned 
+	- Drinks have overall less cost, so least contributor
+		- Hard drinks contribute more
+	- results would be better if we can make the sales distribution follow a straighter line, may be remove the records contributing to higher curve or may be use more advanced model like xgboost(To be done)
+	
 
