@@ -65,7 +65,7 @@ Exploratory data analysis
 		- Inside drinks, Hard drinks contribute more than soft_srinks
 - ** means new features from old ones(feature engineering)  
 
-   - - summary:
+   - summary:
       - SuperMarket_Type3 (most sales contributor) is medium sized, followed by Type 1 which belongs to all 3 sizes
       - Further suggests that sales contribution has nothing to do with Outlet_dIdentifier
       - Outlet_Identifier is for sure redundant and will result in multi-collinearity issue and hence not to be included
