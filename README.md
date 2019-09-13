@@ -1,24 +1,24 @@
-This project is about sales prediction of items in a mart.
+This project is about predicting contribution to outlet sales, against each item that is sold, given mrp,store location, store size, item type and other features.
 
-Few points worth mentioning regarding directory structure:
---csv is placed under data/raw/
---Processed csv is places under data/processed after computation
---Notebook is present in notebooks folder
---bigmart_sales is a package which load all initial packages(__init__.py) and sets data file paths under config.py
+# Few points worth mentioning regarding directory structure:
+- csv is placed under data/raw/
+- Processed csv is places under data/processed after computation
+- Notebook is present in notebooks folder
+- bigmart_sales is a package which load all initial packages(__init__.py) and sets data file paths under config.py
   ++ Abstracts the messy paths in the main notebook to here, so that cleaner view can be provided
---scripts folder is a placeholder for future purposes
---How to run this?
+- scripts folder is a placeholder for future purposes
+## How to run this?
   ++ start Anaconda prompt and go to this folder's parent location and type jupyter notebook
   ++ notebook starts with the parent folder as the base location and you can navigate to different projects from there
 
 
-I have used DecisionTreeRegressor and LinearRegression(with multiple variables)
---Used train_test_splits 
-
+- I have used DecisionTreeRegressor and LinearRegression(with multiple variables)
+	
 ---------------------------------------------------
 New additions:
 --------------------------------------------------
 ++Use KFolds instead of train_test_splits 
+
 ++write a OOPS style framework for running different ML regressor algo on the cleaned data and compare performance and choose the best ML model suited for this model
 
 -------------------------------------------------- 
@@ -32,10 +32,10 @@ Exploratory data analysis
 - Few outliers in Item_Outlet_Sales , Item_Weight,Item_Visibility removed
 - Zero values in Item_Visibilty : replaced with median
 
-- Correlation
+### Correlation
 	- Cleaned dataframe has higher correlation of Item_MRP,Item_Weight to Item_Outlet_Sales, except Item_Visibiity
 	- Original dataframe has lower as compared, except for Item_Visibilty which has higher corrleation wrt cleaned dataframe
-- Categorical columns analysis
+### Categorical columns analysis
 	- Outlet_Type
 		- Cleaned dataframe has only 2 Outlet_Types, out of which Super Market Type 1 makes more significant contribution towards outlet sales than Super Market Type 2
 		- Original dataframe states Super Market Type 3 contributing more, followed by Super Market Type 1 
@@ -65,7 +65,7 @@ Exploratory data analysis
 		- Inside drinks, Hard drinks contribute more than soft_srinks
 - ** means new features from old ones(feature engineering)  
 
-   - - summary:
+   #### summary:
       - SuperMarket_Type3 (most sales contributor) is medium sized, followed by Type 1 which belongs to all 3 sizes
       - Further suggests that sales contribution has nothing to do with Outlet_dIdentifier
       - Outlet_Identifier is for sure redundant and will result in multi-collinearity issue and hence not to be included
@@ -101,4 +101,13 @@ RESULT
 - I have used DecisionTreeRegressor , LinearRegression and RandomForestRegressor
 - original dataframeLinearRegression : performs better with average model score of 0.5459run over 5 KFolds, rmse : 0.157, accuracy : -66
 - Cleaned dataframe :LinearRegression performs better with average model score of 0.46 run over 5 KFolds with original dataframe, rmse : 0.17, accuracy : 33
+- The score is low as we have a curvier line representing the Item_Outlet_Sales
+	- major contributer to more outlet sales is the mrp of the product which is sold
+	- certain costly items like seafood, frozen foods , canned foods, breakfast food contribute more towards sale, despite the sales quantity being low
+	- snack foods and Fruits/vegetables are the most sold food commodity, but the contribution is not as high as seafood/frozen foods/breakfast items/canned 
+	- Drinks have overall less cost, so least contributor
+		- Hard drinks contribute more
+	- outlet location type or item_weight or Visibilty or outlet size have no or very less effect on sale contibution
+	- results would be better if we can make the sales distribution follow a straighter line, may be remove the records contributing to higher curve or may be use more advanced model like xgboost(To be done)
+	
 
