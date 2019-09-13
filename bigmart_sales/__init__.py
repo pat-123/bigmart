@@ -14,10 +14,9 @@ import pandas as pd
 import seaborn  as sb
 import matplotlib.pyplot as plt
 
-from pylab import rcParams
-rcParams['figure.figsize']=(5,6)
 plt.style.use('seaborn-whitegrid')
 
+from pprint import pprint
 import numpy as np
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import accuracy_score
@@ -30,6 +29,8 @@ from sklearn.feature_selection import chi2
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import KFold
 import sklearn
+from pandas.plotting import scatter_matrix
+from scipy.stats import kurtosis,skew
 
 # add to sys paths
 #sys.path.append('C:\\Users\\PAT\\Documents\\edwisor\\projects\\bigmart_sales')
