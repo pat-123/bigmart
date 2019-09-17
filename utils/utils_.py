@@ -578,7 +578,9 @@ def knn_k_tuning(iv,dv,knn_params):
     print('-------------------------------KNN neighbors tuning---------------')
     iv_train,iv_test,dv_train,dv_test =train_test_split(iv,dv,test_size=0.2,random_state=42)
     rmse_err = {}
-    for k in range(1,15):
+    knn_idle = np.sqrt(iv.shape[0]).astype(int)#sqrt of no of observations
+    print('Idle sqrt value for neigbors is',knn_idle)
+    for k in list(range(1,21))+[knn_idle-3,knn_idle-2,knn_idle,knn_idle+2,knn_idle+3]:
         model = KNeighborsRegressor(n_neighbors=k)
         model.fit(iv_train,dv_train)
         dv_test_pred = model.predict(iv_test)
