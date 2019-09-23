@@ -99,8 +99,10 @@ Tuned RandomForestRegressor for n_estimator=500, max_features=16 for original
 RESULT
 --------------------------------------------------
 - I have used DecisionTreeRegressor , LinearRegression and RandomForestRegressor
-- original dataframeLinearRegression : performs better with average model score of 0.5459run over 5 KFolds, rmse : 0.157, accuracy : -66
-- Cleaned dataframe :LinearRegression performs better with average model score of 0.46 run over 5 KFolds with original dataframe, rmse : 0.17, accuracy : 33
+- original dataframeLinearRegression : 
+	- performs better with average model score of 0.5459run over 5 KFolds, rmse : 0.157, accuracy : -66
+- Cleaned dataframe :
+	- LinearRegression performs better with average model score of 0.46 run over 5 KFolds with original dataframe, rmse : 0.17, accuracy : 33
 - The score is low as we have a curvier line representing the Item_Outlet_Sales
 	- major contributer to more outlet sales is the mrp of the product which is sold
 	- certain costly items like seafood, frozen foods , canned foods, breakfast food contribute more towards sale, despite the sales quantity being low
